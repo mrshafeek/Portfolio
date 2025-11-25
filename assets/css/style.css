@@ -1,0 +1,27 @@
+:root {
+  --accent: #0d6efd;
+  --dark-bg: #0b1220;
+  --muted: #6b7280;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+body { font-family: var(--font-family); }
+
+.avatar {
+  width:110px; height:110px;
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:700; font-size:44px; color:#fff;
+  background: linear-gradient(135deg,#2563eb 0%, #7c3aed 100%);
+  box-shadow: 0 8px 30px rgba(2,6,23,0.4);
+  margin: 0 auto;
+}
+
+.project-card { transition: transform .18s ease, box-shadow .18s ease; }
+.project-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(2,6,23,0.08); }
+
+header p.lead { color: #cbd5e1; }
+
+section h3, section h2 { color: #0f172a; }
+
+.timeline h5 { margin-bottom: 0.25rem; }
