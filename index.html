@@ -1,190 +1,330 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mohamed Shafeek — Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohamed Shafeek - Microsoft Engineer | SharePoint Developer</title>
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Optional: Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
 
-  <!-- Custom styles -->
-  <link rel="stylesheet" href="assets/css/styles.css">
+    body {
+      background: #0b0e16;
+      color: white;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      width: 100%;
+      padding: 20px 8%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    nav h1 {
+      font-size: 28px;
+      font-weight: 600;
+      color: #4dabff;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: #d0d6e0;
+      text-decoration: none;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #4dabff;
+    }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      padding: 0 8%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(140deg, #0b0e16 20%, #111824 100%);
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      font-weight: 700;
+    }
+
+    .hero h2 span {
+      color: #4dabff;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 15px auto;
+      color: #c9ced6;
+      font-size: 17px;
+    }
+
+    .btn-main {
+      padding: 12px 30px;
+      background: #4dabff;
+      color: #0b0e16;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 600;
+      margin-top: 20px;
+      text-decoration: none;
+    }
+
+    .btn-main:hover {
+      background: #2f8be0;
+    }
+
+    /* SECTION HEADINGS */
+    section {
+      padding: 70px 8%;
+    }
+
+    h3.section-title {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 40px;
+      color: #4dabff;
+      font-weight: 600;
+    }
+
+    /* ABOUT */
+    .about-box {
+      max-width: 900px;
+      margin: auto;
+      background: #131a26;
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid #1f2a3a;
+    }
+
+    .about-box p {
+      color: #d2d6df;
+      font-size: 16px;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-item {
+      background: #141c28;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      border: 1px solid #1f2a3a;
+      font-size: 16px;
+      color: #d3d8e0;
+      transition: 0.3s;
+    }
+
+    .skill-item:hover {
+      border-color: #4dabff;
+      transform: translateY(-5px);
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: #141c28;
+      padding: 25px;
+      border-radius: 12px;
+      border: 1px solid #1f2a3a;
+      transition: 0.3s;
+    }
+
+    .project-card h4 {
+      margin-bottom: 10px;
+      color: #4dabff;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: #4dabff;
+    }
+
+    /* EXPERIENCE */
+    .exp-box {
+      background: #141c28;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #1f2a3a;
+      margin-bottom: 20px;
+    }
+
+    .exp-box h4 {
+      color: #4dabff;
+    }
+
+    .exp-box small {
+      color: #8ea3c0;
+    }
+
+    /* CONTACT */
+    .contact-box {
+      text-align: center;
+    }
+
+    .contact-box p {
+      font-size: 18px;
+      margin: 8px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #8ea3c0;
+      background: #0a0d14;
+      margin-top: 40px;
+    }
+  </style>
 </head>
-<body class="bg-light" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="100" tabindex="0">
+
+<body>
 
   <!-- NAV -->
-  <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#home">Mohamed Shafeek</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
+  <nav>
+    <h1>Shafeek</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 
   <!-- HERO -->
-  <header id="home" class="py-7 py-md-9 text-white" style="background: linear-gradient(135deg,#0f172a 0%, #0b1220 100%); margin-top:56px;">
-    <div class="container text-center">
-      <div class="row align-items-center">
-        <div class="col-lg-8 mx-auto">
-          <div class="avatar mb-3 mx-auto">M</div>
-          <h1 class="display-5 fw-bold">Mohamed Shafeek</h1>
-          <p class="lead mb-3">Microsoft Engineer · SharePoint & Power Platform · SPFx · PowerApps · Power Automate</p>
-          <div class="d-flex justify-content-center gap-2">
-            <a class="btn btn-primary btn-lg" href="#contact">Get in touch</a>
-            <a class="btn btn-outline-light btn-lg" href="/mnt/data/MohamedShafeek_SharePointDeveloper SPTM.docx" download>Download Resume</a>
-          </div>
-        </div>
-      </div>
+  <div class="hero">
+    <div>
+      <h2>Hello, I'm <span>Mohamed Shafeek</span></h2>
+      <p>Microsoft Engineer specialized in SharePoint Framework (SPFx), PowerApps, Power Automate, and O365 development. I build enterprise-grade workflow automation and modern SharePoint solutions.</p>
+      <a href="resume/MohamedShafeek_SharePointDeveloper%20SPTM.docx" class="btn-main" download>Download Resume</a>
     </div>
-  </header>
+  </div>
 
   <!-- ABOUT -->
-  <section id="about" class="py-6">
-    <div class="container">
-      <div class="row align-items-center g-4">
-        <div class="col-lg-7">
-          <h2 class="fw-bold">About Me</h2>
-          <p class="text-muted fs-5">
-            Detail-oriented Microsoft Engineer with ~3 years building SharePoint & Power Platform solutions.
-            I design SPFx components, PowerApps (Canvas), and automate processes with Power Automate to deliver reliable, business-facing solutions.
-          </p>
-          <ul class="list-unstyled">
-            <li><strong>Location:</strong> Chennai, India</li>
-            <li><strong>Email:</strong> basheermohamedshafeek@gmail.com</li>
-            <li><strong>Current:</strong> Software Engineer – O365 Developer, EY GDS</li>
-          </ul>
-        </div>
-        <div class="col-lg-5 text-center">
-          <img src="assets/img/avatar-placeholder.png" alt="avatar" class="img-fluid rounded-circle shadow" style="max-width:200px;">
-        </div>
-      </div>
+  <section id="about">
+    <h3 class="section-title">About Me</h3>
+    <div class="about-box">
+      <p>
+        I am a dedicated SharePoint & Power Platform Developer with 3 years of professional experience working with EY GDS, Avasoft, and Colan Infotech.  
+        <br><br>
+        I develop SPFx web parts, Canvas Apps, Dataverse-based solutions, and high-scale Power Automate workflows (200+). I focus on solving business problems with automation, clean UX, and stable integrations.
+      </p>
     </div>
   </section>
 
   <!-- SKILLS -->
-  <section id="skills" class="py-6 bg-white">
-    <div class="container">
-      <h3 class="fw-bold mb-4 text-center">Skills & Tools</h3>
-      <div class="row g-3 text-center">
-        <div class="col-sm-6 col-md-4"><div class="p-3 border rounded">SPFx (React + TypeScript)</div></div>
-        <div class="col-sm-6 col-md-4"><div class="p-3 border rounded">Power Apps (Canvas)</div></div>
-        <div class="col-sm-6 col-md-4"><div class="p-3 border rounded">Power Automate / Workflows</div></div>
-        <div class="col-sm-6 col-md-4"><div class="p-3 border rounded">SharePoint Online</div></div>
-        <div class="col-sm-6 col-md-4"><div class="p-3 border rounded">Dataverse</div></div>
-        <div class="col-sm-6 col-md-4"><div class="p-3 border rounded">C# / .NET / PowerShell</div></div>
-      </div>
+  <section id="skills">
+    <h3 class="section-title">Skills</h3>
+    <div class="skills-grid">
+      <div class="skill-item">SharePoint Online / SPFx</div>
+      <div class="skill-item">PowerApps (Canvas Apps)</div>
+      <div class="skill-item">Power Automate (Flows)</div>
+      <div class="skill-item">Dataverse</div>
+      <div class="skill-item">C# / .NET</div>
+      <div class="skill-item">React / TypeScript</div>
     </div>
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects" class="py-6">
-    <div class="container">
-      <h3 class="fw-bold mb-4 text-center">Selected Projects</h3>
-      <div class="row g-4">
-        <!-- Card 1 -->
-        <div class="col-md-4">
-          <div class="card project-card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">SPFx Approvals Hub</h5>
-              <p class="card-text text-muted">SPFx web part centralizing document approvals; integrated with Power Automate for sign-offs and audit logs.</p>
-              <div class="d-flex justify-content-between align-items-center mt-3">
-                <small class="text-muted">SPFx · React · Power Automate</small>
-                <div>
-                  <a class="btn btn-sm btn-outline-primary" href="#" role="button">Demo</a>
-                  <a class="btn btn-sm btn-outline-dark" href="#" role="button">Repo</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Card 2 -->
-        <div class="col-md-4">
-          <div class="card project-card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">Stationery Shop (Power Apps)</h5>
-              <p class="card-text text-muted">End-to-end solution: purchase, stock, sales tracking, monthly P/L using Dataverse & Power Automate.</p>
-              <div class="d-flex justify-content-between align-items-center mt-3">
-                <small class="text-muted">PowerApps · Dataverse</small>
-                <div>
-                  <a class="btn btn-sm btn-outline-primary" href="#">Demo</a>
-                  <a class="btn btn-sm btn-outline-dark" href="#">Repo</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Card 3 -->
-        <div class="col-md-4">
-          <div class="card project-card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">Sales & Workflow Automation</h5>
-              <p class="card-text text-muted">Connected PowerApps + Excel + ADO with 50+ flows for approvals, notifications and reporting.</p>
-              <div class="d-flex justify-content-between align-items-center mt-3">
-                <small class="text-muted">Power Automate · Integrations</small>
-                <div>
-                  <a class="btn btn-sm btn-outline-primary" href="#">Demo</a>
-                  <a class="btn btn-sm btn-outline-dark" href="#">Repo</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> <!-- /row -->
+  <section id="projects">
+    <h3 class="section-title">Projects</h3>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <h4>SPFx Approval Workflow</h4>
+        <p>Custom SPFx solution integrated with Power Automate to automate document approval processes inside SharePoint.</p>
+      </div>
+
+      <div class="project-card">
+        <h4>Stationery Shop PowerApps</h4>
+        <p>End-to-end inventory management, sales, and restock tracking with Dataverse backend and automated monthly reports.</p>
+      </div>
+
+      <div class="project-card">
+        <h4>Sales & Workflow Automation</h4>
+        <p>PowerApps + Excel + ADO integrated solution with 50+ automated flows for notifications, approvals, and reporting.</p>
+      </div>
+
     </div>
   </section>
 
   <!-- EXPERIENCE -->
-  <section id="experience" class="py-6 bg-white">
-    <div class="container">
-      <h3 class="fw-bold mb-4 text-center">Experience</h3>
-      <div class="timeline">
-        <div class="mb-3">
-          <h5 class="mb-1">Ernst & Young GDS</h5>
-          <small class="text-muted">Software Engineer – O365 Developer (Sep 2024 — Present)</small>
-          <p class="mb-0">Built SPFx apps, 10 PowerApps and 50+ Power Automate flows; implemented integrations and optimized workflows.</p>
-        </div>
-        <hr>
-        <div class="mb-3">
-          <h5 class="mb-1">Avasoft Private Limited</h5>
-          <small class="text-muted">Software Engineer (Jun 2022 — Jun 2024)</small>
-          <p class="mb-0">Developed SPFx solutions, 200+ Power Automate flows and 50+ Power Apps for multiple clients.</p>
-        </div>
-      </div>
+  <section id="experience">
+    <h3 class="section-title">Experience</h3>
+
+    <div class="exp-box">
+      <h4>EY GDS – O365 Developer</h4>
+      <small>2024 – Present</small>
+      <p>Built SPFx web apps, PowerApps, 50+ flows; automated internal approval and sign-off processes.</p>
     </div>
+
+    <div class="exp-box">
+      <h4>Avasoft – Power Platform Developer</h4>
+      <small>2022 – 2024</small>
+      <p>Developed 200+ Power Automate flows and 50+ PowerApps integrated with SharePoint Online.</p>
+    </div>
+
+    <div class="exp-box">
+      <h4>Colan Infotech – Software Engineer</h4>
+      <small>3 Months</small>
+      <p>Worked on Power Platform and SPFx feature enhancements.</p>
+    </div>
+
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="py-6">
-    <div class="container text-center">
-      <h3 class="fw-bold mb-3">Get in touch</h3>
-      <p class="mb-1">Email: <a href="mailto:basheermohamedshafeek@gmail.com">basheermohamedshafeek@gmail.com</a></p>
-      <p class="mb-3">GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
-      <a class="btn btn-lg btn-primary" href="mailto:basheermohamedshafeek@gmail.com?subject=Hiring%20Enquiry">Send Email</a>
+  <section id="contact">
+    <h3 class="section-title">Contact</h3>
+    <div class="contact-box">
+      <p>Email: <b>basheermohamedshafeek@gmail.com</b></p>
+      <p>GitHub: <b>github.com/mrshafeek</b></p>
+      <a href="mailto:basheermohamedshafeek@gmail.com" class="btn-main">Send Message</a>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="py-4 bg-dark text-white text-center">
-    <div class="container">
-      <small>© <span id="year"></span> Mohamed Shafeek — Built with Bootstrap • Host on GitHub Pages</small>
-    </div>
+  <footer>
+    © 2025 Mohamed Shafeek — All Rights Reserved
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/main.js"></script>
 </body>
 </html>
